@@ -15,9 +15,9 @@ export const FeedbackOptions = ({chooseFeedback, options})=> {
     )
 }
 
-FeedbackOptions.prototype = {
+FeedbackOptions.propTypes = {
     chooseFeedback: PropTypes.func,
-    options: PropTypes.arrayOf(
-        PropTypes.string
+    options: PropTypes.objectOf(
+        PropTypes.number
     )
 }

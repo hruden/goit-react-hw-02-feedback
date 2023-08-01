@@ -26,7 +26,7 @@ return(
 )
 }
 
-Statistics.prototype = {
+Statistics.propTypes = {
     good: PropTypes.number.isRequired,
     neurtal: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,

@@ -7,6 +7,6 @@ export const Notification = ({message}) => {
         <NotificationText>{message}</NotificationText>
     )
 }
-Notification.prototype = {
+Notification.propTypes = {
     message: PropTypes.string,
 }

@@ -11,7 +11,7 @@ export const Section = ({title, children}) =>{
 }
 
 
-Section.prototype = {
+Section.propTypes = {
     title: PropTypes.string,
     children: PropTypes.any,
 }
