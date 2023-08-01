@@ -1,16 +1,23 @@
 import { FeedbackBtn, FeedbackContainer } from "./FeedbackOptions.styled"
-import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types'; 
 
-export const FeedbackOptions = ({chooseFeedback})=> {
+export const FeedbackOptions = ({chooseFeedback, options})=> {
+    const array = Object.keys(options)
     return(
         <FeedbackContainer>
-        <FeedbackBtn type="button" name='good' onClick={chooseFeedback}>Good</FeedbackBtn>
-        <FeedbackBtn type="button" name='neurtal'onClick={chooseFeedback}>Neurtal</FeedbackBtn>
-        <FeedbackBtn type="button" name='bad'onClick={chooseFeedback}>Bad</FeedbackBtn>
+        {array.map((name) =>  {
+                return (
+                    <FeedbackBtn key={nanoid()} type="button" onClick={()=>chooseFeedback({name})}>{name}</FeedbackBtn>
+                )
+            })}
     </FeedbackContainer>
     )
 }
 
 FeedbackOptions.prototype = {
-    chooseFeedback: PropTypes.func
+    chooseFeedback: PropTypes.func,
+    options: PropTypes.arrayOf(
+        PropTypes.string
+    )
 }

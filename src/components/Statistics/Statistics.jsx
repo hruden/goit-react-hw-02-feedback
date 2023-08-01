@@ -12,7 +12,6 @@ export const Statistics = ({good, neurtal, bad})=> {
     }
 return(
     <>
-    <h3>Statictics</h3>
     {(good|| neurtal || bad)?     
     <StatisticsList>
         <StatisticsItem>Good: {good}</StatisticsItem>
@@ -23,13 +22,12 @@ return(
     </StatisticsList>:
     <Notification message="There is no feedback"/>
     }
-
     </>
 )
 }
 
 Statistics.prototype = {
-    good: PropTypes.number,
-    neurtal: PropTypes.number,
-    bad: PropTypes.number,
+    good: PropTypes.number.isRequired,
+    neurtal: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
 }
